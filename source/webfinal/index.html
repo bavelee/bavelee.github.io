@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>军魂影视</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/junhun.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<!-- // 解决Chrome不能自动播放，建议使用火狐浏览器并关闭自动硬件加速
+		// https://blog.csdn.net/a639735331/article/details/81457144
+		// 在浏览器输入  chrome://flags/#autoplay-policy 
+		// 第一个选项 Autoplay policy  设置为 no user gesture is required -->
+	<!-- 后台直接开始播放音乐 -->
+	<audio id="bgmusic" src="./audios/bgm.mp3" autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3"></audio>
+	<!-- 头部标签：包括动态logo，标题，搜索框 -->
+	<header>
+		<!-- logo -->
+		<img width="100px" height="100px" src="./images/logo.gif">
+		<div id="title">
+			<span class="fired colored">军魂<span class="nocolored">影视</span></span>
+			<span>
+				<span class="nofired nocolored">www.<span class="colored">junhunfilm</span>.cn</span>
+			</span>
+		</div>
+		<!-- 搜索框和搜索按钮 -->
+		<div class="searchbar">
+             <form>
+                <input type="text" class="search-edit">
+                <button type="button">搜索</button>
+             </form>
+        </div>
+	</header>
+	<!-- 网站的导航按钮 -->
+	<nav>
+		<li><a href="./index.html">首页</a></li>
+		<li><a href="./index.html">影视推荐</a></li>
+		<li><a href="./index.html">影视分类</a></li>
+		<li><a href="./index.html">热门影视</a></li>
+		<li><a href="./index.html">票房热榜</a></li>
+	</nav>
+	<!-- 左侧导航栏和右侧的轮播海报图 -->
+	<section>
+		<!-- 左侧导航栏，有序列表导航 -->
+		<aside>
+			<span class="hot-list">热门口碑榜</span>
+			<ol>
+			  <li><a href="./second.html">湄公河行动</a></li>
+			  <li><a href="./second.html">红海行动</a></li>
+			  <li><a href="./second.html">战狼Ⅱ</a></li>
+			  <li><a href="./second.html">军事禁区</a></li>
+			  <li><a href="./second.html">佣兵的战争</a></li>
+			  <li><a href="./second.html">非凡任务</a></li>
+			  <li><a href="./second.html">歼十出击</a></li>
+			  <li><a href="./second.html">冲出亚马逊</a></li>
+			  <li><a href="./second.html">战狼Ⅰ</a></li>
+			  <li><a href="./second.html">我的老兵爷爷</a></li>
+			</ol>
+		</aside>
+		<!-- Bootstrap的轮播控件, 设置 data-ride="carousel" 启用自动轮播 -->
+		<div id="lunbo-container" class="container" data-ride="carousel">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="carousel slide" id="carousel-442632">
+						<ol class="carousel-indicators">
+							<li data-slide-to="0" data-target="#carousel-442632">
+							</li>
+							<li data-slide-to="1" data-target="#carousel-442632">
+							</li>
+							<li data-slide-to="2" data-target="#carousel-442632" class="active">
+							</li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item">
+								<img alt="" src="./images/lunbo1.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										战狼
+									</h4>
+									<p>
+										《战狼》真实呈现了一场中外边境战争，也让堪称“东方之狼”的特种兵战队及高能战士首次登陆大银幕。讲述的是小人物成长为拯救国家和民族命运的孤胆英雄的传奇故事。
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img alt="" src="./images/lunbo2.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										红海行动
+									</h4>
+									<p>
+										该片讲述了中国海军“蛟龙突击队”8人小组奉命执行撤侨任务，突击队兵分两路进行救援，但不幸遭到伏击，人员伤亡；同时在粉碎叛军武装首领的惊天阴谋中惨胜的故事。
+									</p>
+								</div>
+							</div>
+							<div class="item active">
+								<img alt="" src="./images/lunbo3.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										湄公河行动
+									</h4>
+									<p>
+										讲述了一支行动小组为解开中国商船船员遇难所隐藏的阴谋，企图揪出运毒案件幕后黑手的故事。影片于2016年9月30日在中国上映。
+									</p>
+								</div>
+							</div>
+						</div> <a class="left carousel-control" href="#carousel-442632" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-442632" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 网页的主要部分，通过flex布局显示影片剧照包括影片信息 -->
+	<main id="index-main">
+		<span class="top-movies">顶级大片</span>
+		<!-- movie-list中的div（不包括子div的div）通过flex布局显示电影详情描述 -->
+		<div id="movie-list">
+			<div>
+				<a href="./second.html">
+					<img src="./images/zhanlang.jpg" width="300px" height="390px">
+				</a>
+				<div id="movie-desc">
+					<span>战狼Ⅱ</span>
+					<span>导演: <a href="#">吴京</a></span>
+					<span>编剧: <a href="#">吴京</a> / <a href="#">弗兰克·格里罗</a></span>
+					<span>主演: <a href="#">张涵予</a> / <a href="#">彭于晏</a> / <a href="#">孙淳</a></span>
+					<span>类型: <a href="#">动作</a></span>
+					<span>制片国家/地区: <a href="#">中国大陆</a></span>
+					<span>语言: <a href="#">汉语普通话</a> / <a href="#">英语</a></span>
+					<span>上映日期: <a href="#">2017-07-27(中国大陆)</a></span>
+					<span>片长: <a href="#">123分钟</a></span>
+					<span>又名: <a href="#">Wolf Warriors 2</a></span>
+					<span>IMDb链接: <a href="#">tt7131870</a></span>
+				</div>
+			</div>
+			<div>
+				<a href="./second.html">
+					<img src="./images/meigonghexingdong.jpg" width="300px" height="390px">
+				</a>
+				<div id="movie-desc">
+					<span>湄公河行动</span>
+					<span>导演: <a href="#">林超贤</a></span>
+					<span>编剧: <a href="#">林超贤</a> / <a href="#">朱镜祺</a></span>
+					<span>主演: <a href="#">张涵予</a> / <a href="#">彭于晏</a> / <a href="#">孙淳</a></span>
+					<span>类型: <a href="#">动作</a> / <a href="#">犯罪</a></span>
+					<span>制片国家/地区: <a href="#">中国大陆</a> / <a href="#">香港</a></span>
+					<span>语言: <a href="#">汉语普通话</a> / <a href="#">粤语</a> / <a href="#">英语</a></span>
+					<span>上映日期: <a href="#">2016-09-30(中国大陆)</a></span>
+					<span>片长: <a href="#">124分钟</a></span>
+					<span>又名: <a href="#">Operation Mekong</a></span>
+					<span>IMDb链接: <a href="#">tt6044910</a></span>
+				</div>
+			</div>
+			
+			<div>
+				<a href="./second.html">
+					<img src="./images/honghaixingdong.jpg" width="300px" height="390px">
+				</a>
+				<div id="movie-desc">
+					<span>红海行动</span>
+					<span>导演: <a href="#">林超贤</a></span>
+					<span>编剧: <a href="#">冯骥</a> / <a href="#">林明杰</a></span>
+					<span>主演: <a href="#">张译</a> / <a href="#">黄景瑜</a> / <a href="#">海清</a></span>
+					<span>类型: <a href="#">动作</a> / <a href="#">战争</a></span>
+					<span>制片国家/地区: <a href="#">中国大陆</a> / <a href="#">香港</a></span>
+					<span>语言: <a href="#">汉语普通话</a> / <a href="#">阿拉伯语</a> / <a href="#">英语</a></span>
+					<span>上映日期: <a href="#">2018-02-16(中国大陆)</a></span>
+					<span>片长: <a href="#">138分钟</a></span>
+					<span>又名: <a href="#">Operation Red Sea</a></span>
+					<span>IMDb链接: <a href="#">tt6878882</a></span>
+				</div>
+			</div>
+			<div>
+				<a href="./second.html">
+					<img src="./images/yamaxun.jpg" width="300px" height="390px">
+				</a>
+				<div id="movie-desc">
+					<span>冲出亚马逊</span>
+					<span>导演: <a href="#">宋业明</a></span>
+					<span>编剧: <a href="#">赵峻防</a> / <a href="#">王戈洪</a></span>
+					<span>主演: <a href="#">侯勇</a> / <a href="#">穆立新</a> / <a href="#">汤姆·巴特勒</a></span>
+					<span>类型: <a href="#">动作</a> / <a href="#">剧情</a></span>
+					<span>制片国家/地区: <a href="#">中国大陆</a></span>
+					<span>语言: <a href="#">汉语普通话</a></span>
+					<span>上映日期: <a href="#">2002-07-01(中国大陆)</a></span>
+					<span>片长: <a href="#">102分钟</a></span>
+					<span>又名: <a href="#">Charging Out Amazon</a></span>
+					<span>IMDb链接: <a href="#">tt1501292</a></span>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<footer>
+		<span>
+			版权所有：信息工程学院17级软件四班李涛
+			<br>
+			地址：浔阳区青年路96号 | 联系邮箱：contactus@junhunfilm.cn
+		</span>
+	</footer>
+	<script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+		//设置轮播间隔时间
+		$(function(){
+            $('#lunbo-container').carousel({
+				interval: 1800
+            });
+        });
+
+	</script>
+</body>
+</html>

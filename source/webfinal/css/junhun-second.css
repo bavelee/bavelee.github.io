@@ -1,0 +1,91 @@
+#second-main{
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 1440px;
+	height: auto;
+	font-size: 20px;
+}
+#second-main video{
+	height: auto;
+	width: 1440px;
+}
+@keyframes animove{
+	0%{
+		left: 100%;
+		opacity: 0;
+	}
+	/*设置1%的帧，将标签设置为不透明，避免出现透明到显示的动画效果*/
+	1%{
+		left: 99%;
+		opacity: 1;
+	}
+	10%{
+		left: 90%;
+		opacity: 1;
+	}
+	20%{
+		left: 80%;
+		opacity: 1;
+	}
+	30%{
+		left: 70%;
+		opacity: 1;
+	}
+	40%{
+		left: 60%;
+		opacity: 1;
+	}
+	50%{
+		left: 50%;
+		opacity: 1;
+	}
+	60%{
+		left: 40%;
+		opacity: 1;
+	}
+	70%{
+		left: 30%;
+		opacity: 1;
+	}
+	80%{
+		left: 20%;
+		opacity: 1;
+	}
+	90%{
+		left: 10%;
+		opacity: 1;
+	}
+	/*弹幕消失的画面快一点，xiu的一下就不见了*/
+	95%{
+		left: 0%;
+		opacity: 1;
+	}
+	/*弹幕直接消失在屏幕之外*/
+	100%{
+		left: -30%;
+		opacity: 0;
+		display: none;
+	}
+}
+#tanku{
+	position: absolute;
+	width: 1440px;
+	height: 700px;
+	top: 320px;
+	overflow: hidden;/*隐藏内容溢出的弹幕*/
+}
+/*弹幕容器中的所有子div（不包括子div中的div）*/
+#tanku > div{
+	position: absolute;
+	display: inline;
+	color: #FFF;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	opacity: 0;
+	font-family: "微软雅黑";
+	animation: animove 7s linear;/*不重复播放*/
+}
+
+

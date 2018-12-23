@@ -1,0 +1,218 @@
+body{
+	/*顶部内边距和底部内边距*/
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+header{
+	margin: 0 auto;
+	width: 1440px;
+	height: auto;
+	display: flex;
+	flex-direction: row; /*行分布*/
+	flex-wrap: nowrap;/*不换行*/
+	align-items: center;/*垂直居中*/
+	justify-content: center;/*水平居中*/
+}
+nav{
+	margin: 0 auto;
+	width: 1440px;
+	height: 50px;
+	background: #971200;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+li, a, a:hover, a:visited{
+	list-style-type: none;
+	text-decoration: none;
+}
+nav li{
+	width: 20%;
+	text-align: center;
+}
+nav li a{
+	color: #FFF;
+	font-size: 25px;
+	font-weight: bold;
+}
+nav li a:hover{
+	color: #ef3838;
+}
+
+section{
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 1440px;
+	height: 480px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+footer{
+	margin: 0 auto;
+	margin-top: 5px;
+	padding: 15px 0;
+	width: 1440px;
+	height: auto;
+	background: #971200;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+	color: #FFF;
+}
+footer span{
+	margin: 0 auto;
+}
+#index-main{
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 1440px;
+	height: auto;
+}
+.top-movies{
+	background: #971200;
+	color: #FFF;
+	font-size: 40px;
+	padding: 3px;
+}
+.hot-list{
+	color: #FFF;
+	font-size: 30px;
+}
+aside{
+	width: 20%;
+	height: 100%;
+	background: #971200;
+	padding: 30px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+aside ol{
+	padding: 20px;
+}
+aside ol li{
+	color: #FFF;
+	margin-top: 8px;
+	/*有序列表的序号为数字*/
+	list-style-type: decimal;
+}
+aside a{
+	font-size: 16px;
+	color: #FFF;
+}
+aside li a:hover{
+	color: #ef3838;
+}
+#lunbo-container{
+	width: 80%;
+	height: 480px;
+}
+
+@font-face{
+     font-family: 'junhun'; 
+     src: url('../fonts/zqhmm.ttf') format('truetype');
+}
+#title{
+	color: #000;
+	min-width: 320px;
+	margin-left: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+#title .fired{
+	/*<!-- 网上复制的文字并自己修改的火焰效果，修改自 https://www.cnblogs.com/html5tricks/p/3776988.html -->*/
+	text-shadow: 0 0 5px #fefcc9, 2px -5px 8px #feec85, -5px -5px 10px #ffae34, 5px -10px 12px #ec760c, -5px -12px 12px #cd4606, 0 -15px 18px #973716, 2px -20px 28px #451b0e;
+	/*增加火焰效果的文字大小*/
+	font-size: 80px;
+	font-family: junhun;
+}
+#title .nofired{
+	/*不增加火焰效果的文字大小*/
+	font-size: 20px;
+}
+#title .colored{
+	/*高亮显示的文字颜色*/
+	color: #971200;
+}
+#title .nocolored{
+	/*不高亮显示的文字颜色*/
+	color: #000;
+}
+.searchbar{
+	width: 100%;
+	display: flex;
+	/*搜索框中的from位于搜索框最右侧*/
+	justify-content: flex-end;
+	padding: 2px;
+}
+.searchbar input {
+	border: 2px solid #971200;
+	border-radius: 3px;
+	background: #FFFFFF;
+	height: 32px;
+	width: 200px;
+}
+.searchbar button {
+	background: #971200;
+	color: #FFF;
+	border-width: 0;
+	width: 40px;
+	height: 30px;
+	border-radius: 3px;
+}
+#movie-list{
+	display: flex;
+	/*子item之间间距相同*/
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#movie-list > div{
+	width: 666px;
+	height: 400px;
+	margin-bottom: 20px;
+	background: #971200;
+	padding: 5px;
+	display: flex;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	color: #FFF;
+}
+#movie-desc{
+	display: flex;
+	flex-wrap: wrap;
+	/*电影的描述，以列显示*/
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 16px;
+	margin-left: 20px;
+}
+#movie-desc span{
+	color: #CCCCCC;
+	margin: 5px;
+}
+/*电影描述第一个为电影的名称，所以使用不同的字体大小和颜色*/
+#movie-desc span:nth-child(1){
+	color: #FFF;
+	font-size: 30px;
+}
+#movie-desc a{
+	color: #FFF;
+}
+#movie-desc a:hover{
+	color: #ef3838;
+}
