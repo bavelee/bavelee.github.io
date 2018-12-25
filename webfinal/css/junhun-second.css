@@ -1,0 +1,102 @@
+/*second页面的内容*/
+#second-main{
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 1440px;
+	height: auto;
+	font-size: 20px;
+}
+/*控制视频的显示大小*/
+#second-main video{
+	height: auto;
+	width: 1440px;
+}
+/*播放标题*/
+#second-main a{
+	color: #971200;
+}
+#second-main a:hover{
+	color: #ef3838;
+}
+/*弹幕出现到结束的动画*/
+@keyframes animove{
+	0%{
+		left: 100%;
+		opacity: 0;
+	}
+	/*设置1%的帧，将弹幕设置为不透明，减少透明到显示的动画效果，给人的感觉就是咻的一下弹幕就显示出来*/
+	1%{
+		left: 99%;
+		opacity: 1;
+	}
+	10%{
+		left: 90%;
+		opacity: 1;
+	}
+	20%{
+		left: 80%;
+		opacity: 1;
+	}
+	30%{
+		left: 70%;
+		opacity: 1;
+	}
+	40%{
+		left: 60%;
+		opacity: 1;
+	}
+	50%{
+		left: 50%;
+		opacity: 1;
+	}
+	60%{
+		left: 40%;
+		opacity: 1;
+	}
+	70%{
+		left: 30%;
+		opacity: 1;
+	}
+	80%{
+		left: 20%;
+		opacity: 1;
+	}
+	90%{
+		left: 10%;
+		opacity: 1;
+	}
+	/*弹幕快要消失时，需要加速消失，让画面快一点，咻的一下就不见了*/
+	95%{
+		left: 0%;
+		opacity: 1;
+	}
+	/*弹幕直接消失在屏幕之外*/
+	100%{
+		left: -30%;
+		opacity: 0;
+		display: none;
+	}
+}
+/*承载弹幕的容器*/
+#tanku{
+	position: absolute;
+	width: 1440px;
+	height: 700px;
+	top: 320px;
+	overflow: hidden;/*隐藏内容溢出的弹幕*/
+}
+/*弹幕容器中的所有子div（不包括子div中的div）*/
+#tanku > div{
+	position: absolute;/*位置需要是固定的，如果是相对的，会导致弹幕只会出现在上一条弹幕的下面*/
+	display: inline;
+	color: #FFF;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 20px;
+	opacity: 0;/*默认隐藏*/
+	font-family: "微软雅黑";
+	animation: animove 7s linear;/*不重复播放*/
+}
+
+

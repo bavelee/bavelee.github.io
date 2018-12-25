@@ -1,0 +1,240 @@
+@font-face{
+     font-family: 'junhun'; 
+     src: url('../fonts/zqhmm.ttf') format('truetype');
+}
+body{
+	/*顶部内边距和底部内边距*/
+	padding: 30px 0;
+}
+/*头部样式*/
+header{
+	margin: 0 auto;/*实现居中*/
+	width: 1440px;
+	height: auto;/*高度根据子内容自适应*/
+	display: flex;
+	flex-direction: row; /*横向分布*/
+	flex-wrap: nowrap;/*不换行*/
+	align-items: center;/*垂直居中*/
+	justify-content: center;/*水平居中*/
+}
+/*网站的标题*/
+#title{
+	color: #000;
+	min-width: 320px;
+	margin-left: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+/*有火焰文字效果*/
+#title .fired{
+	/*<!-- 网上复制的css火焰效果并自己修改的火焰效果，修改自 https://www.cnblogs.com/html5tricks/p/3776988.html -->*/
+	text-shadow: 0 0 5px #fefcc9, 2px -5px 8px #feec85, -5px -5px 10px #ffae34, 5px -10px 12px #ec760c, -5px -12px 12px #cd4606, 0 -15px 18px #973716, 2px -20px 28px #451b0e;
+	/*增加火焰效果的文字大小*/
+	font-size: 80px;
+	/*使用自定义字体*/
+	font-family: junhun;
+}
+/*无火焰文字效果*/
+#title .nofired{
+	/*不增加火焰效果的文字大小*/
+	font-size: 20px;
+}
+/*有文字高亮突出*/
+#title .colored{
+	/*高亮显示的文字颜色*/
+	color: #971200;
+}
+/*无文字高亮突出*/
+#title .nocolored{
+	/*不高亮显示的文字颜色*/
+	color: #000;
+}
+/*搜索栏*/
+.searchbar{
+	width: 100%;
+	display: flex;
+	/*因为整个搜索框宽度为100%，需要把其中的子from位于搜索框最右侧，从而实现搜索框在header的最右侧，使用align-self也可以实现同样的效果*/
+	justify-content: flex-end;
+	padding: 2px;
+}
+/*输入框*/
+.searchbar input {
+	border: 2px solid #971200;
+	border-radius: 3px;
+	background: #FFFFFF;
+	height: 32px;
+	width: 200px;
+}
+/*搜索按钮*/
+.searchbar button {
+	background: #971200;
+	color: #FFF;
+	border-width: 0;/*去掉搜索按钮的边框，默认有边框*/
+	width: 40px;
+	height: 30px;
+	border-radius: 3px;
+}
+/*导航栏样式*/
+nav{
+	margin: 0 auto;
+	width: 1440px;
+	height: 50px;
+	background: #971200;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding: 5px 0;/*导航栏的超链接增加上下内边距*/
+}
+li, a, a:hover, a:visited{
+	list-style-type: none;/*清除列表的序号*/
+	text-decoration: none;/*清除列表的下划线*/
+}
+nav li{
+	width: 20%;/*导航栏有五个超链接，每个占20%*/
+	text-align: center;
+}
+nav li a{
+	color: #FFF;
+	font-size: 25px;
+	font-weight: bold;
+}
+nav li a:hover{
+	color: #ef3838;
+}
+/*左侧导航栏和轮播图的容器样式*/
+section{
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 1440px;
+	height: 480px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+/*左侧的热门列表标题*/
+.hot-list{
+	color: #FFF;
+	font-size: 40px;
+}
+/*左侧侧栏*/
+aside{
+	width: 20%;
+	height: 500px;
+	background: #971200;
+	padding: 30px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+/*有序列表*/
+aside ol{
+	padding: 20px;
+}
+aside ol li{
+	color: #FFF;
+	margin-top: 8px;
+	/*有序列表的序号为数字*/
+	list-style-type: decimal;
+}
+aside a{
+	font-size: 16px;
+	color: #FFF;
+}
+aside li a:hover{
+	color: #ef3838;
+}
+/*轮播插件的样式*/
+#lunbo-container{
+	width: 80%;
+	max-height: 480px;
+	padding: 0;
+	/*margin-left: 40px;*/
+}
+/*页脚*/
+footer{
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 15px 0;
+	width: 1440px;
+	height: auto;
+	background: #971200;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+	color: #FFF;
+}
+/*页脚中的span标签居中对齐*/
+footer span{
+	margin: 0 auto;
+}
+/*index页面的网页主体部分，高度根据内容自适应*/
+#index-main{
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 1440px;
+	height: auto;
+}
+/*网页主体内容的标题*/
+.top-movies{
+	background: #971200;
+	color: #FFF;
+	font-size: 40px;
+	padding: 3px;
+}
+/*主体中的放置海报的容器*/
+#movie-list{
+	display: flex;
+	/*子item之间间距相同*/
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;/*允许换行*/
+}
+/*单个海报的内容*/
+#movie-list > div{
+	width: 666px;
+	height: 400px;
+	margin-bottom: 20px;
+	background: #971200;
+	padding: 5px;
+	display: flex;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	color: #FFF;
+}
+/*每个海报内容中的对于电影详情的描述布局的样式*/
+#movie-desc{
+	display: flex;
+	flex-wrap: wrap;
+	/*电影的描述，以列显示*/
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-size: 16px;
+	margin-left: 20px;
+}
+#movie-desc span{
+	color: #CCCCCC;
+	margin: 5px;
+}
+/*电影描述第一个为电影的名称，所以使用不同的字体大小和颜色*/
+#movie-desc span:nth-child(1){
+	color: #FFF;
+	font-size: 30px;
+}
+#movie-desc a{
+	color: #FFF;
+}
+#movie-desc a:hover{
+	color: #ef3838;
+}

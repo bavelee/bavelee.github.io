@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>军魂影视</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/junhun.css" rel="stylesheet" type="text/css">
+	<link href="./css/junhun-second.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- 头部标签：包括动态gif logo，标题，搜索框 -->
+	<header>
+		<!-- logo -->
+		<img width="100px" height="100px" src="./images/logo.gif">
+		<div id="title">
+			<span class="fired colored">军魂<span class="nocolored">影视</span></span>
+			<span>
+				<span class="nofired nocolored">www.<span class="colored">junhunfilm</span>.cn</span>
+			</span>
+		</div>
+		<!-- 搜索框和搜索按钮 -->
+		<div class="searchbar">
+             <form>
+                <input type="text" class="search-edit">
+                <button type="button">搜索</button>
+             </form>
+        </div>
+	</header>
+	<!-- 网站的导航按钮 -->
+	<nav>
+		<li><a href="./index.html">首页</a></li>
+		<li><a href="./index.html">影视推荐</a></li>
+		<li><a href="./index.html">影视分类</a></li>
+		<li><a href="./index.html">热门影视</a></li>
+		<li><a href="./index.html">票房热榜</a></li>
+	</nav>
+	<main id="second-main">
+		<!-- 播放中视频标题 -->
+		<span class="nocolored">正在播放：<a class="colored" href="#">《战狼Ⅱ》</a></span>
+		<!-- 开启视频自动播放不显示控制条 -->
+		<video autoplay="autoplay" loop="loop" id="myVideo">
+			<source src="./videos/zhanlang.mp4" type="video/mp4">
+		</video>
+		<!-- 承载弹幕的容器 -->
+		<div id="tanku">
+
+		</div>
+	</main>
+	<!-- 页脚 -->
+	<footer>
+		<span>
+			版权所有：信息工程学院17级软件四班李涛
+			<br>
+			地址：浔阳区青年路96号 | 联系邮箱：contactus@junhunfilm.cn
+		</span>
+	</footer>
+	<script type="text/javascript">
+		// 随机弹幕，包括随机的出现位置
+
+        // Web Worker
+        // Chrome 从本地文件加载网页时，禁止使用Web Worker，需要加上启动参数:--allow-file-access-from-files
+        // 或者更换浏览器
+        var worker = new Worker("./js/posttanku.js");
+        worker.onmessage = function (event) {
+  			//接收到的event.data是一个数组,分别存放 {Y轴的位置， 弹幕颜色， 弹幕内容}
+  			var result = event.data;
+       		//获取弹幕容器
+        	var tanku = document.getElementById('tanku');
+  			//新建一个div
+  			var post = document.createElement("div");
+  			// 将result中的值设置给div
+  			post.style.top = result[0];
+  			post.style.color = result[1];
+  			post.innerHTML = result[2];
+  			//将承载了弹幕的div添加到弹幕容器
+			tanku.appendChild(post);
+		};
+		
+	</script>
+</body>
+</html>
